@@ -1,0 +1,16 @@
+
+#  CAMBIAR EL NOMBRE DEL ARCHIVO A .env
+
+PORT=8080
+ICON_URL=tu_icon_url_aqui
+ICON_API_KEY=tu_icon_api_key_aqui
+JPH_URL=tu_jph_url_aqui
+
+
+#   Base de datos
+
+DB_HOST=tuservidor.siteground.com
+DB_USER=tu_usuario
+DB_PASSWORD=tu_contraseña
+DB_DATABASE=tu_base_de_datos
+DB_PORT=3306
