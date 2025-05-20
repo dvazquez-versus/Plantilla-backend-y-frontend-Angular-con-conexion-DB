@@ -1,0 +1,5 @@
+<app-server-starting *ngIf="loading" (ready)="onServerReady()"></app-server-starting>
+
+<main class="app-container" *ngIf="!loading">
+  <router-outlet></router-outlet>
+</main>

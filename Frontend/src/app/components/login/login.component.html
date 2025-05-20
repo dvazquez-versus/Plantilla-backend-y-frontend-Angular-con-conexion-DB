@@ -1,0 +1,45 @@
+<form #loginForm="ngForm" (ngSubmit)="sendData(loginForm)" autocomplete="off" novalidate>
+  <div class="container">
+    <div class="card">
+      <a class="login">Iniciar sesión</a>
+
+      <!-- romper autofill -->
+      <input type="text" name="fakeuser" autocomplete="off" style="display:none" />
+
+      <div class="inputBox">
+        <input type="email" name="correo" [(ngModel)]="correo" required autocomplete="new-username" />
+        <span class="user">Correo</span>
+      </div>
+
+      <div class="inputBox passwordBox">
+        <input [type]="passwordType" name="contrasena" [(ngModel)]="contrasena" required autocomplete="new-password" />
+        <span>Contraseña</span>
+      </div>
+
+      <p id="form-error-mensage" [style.color]="errorMessageColor" style="margin: -30px;">{{ errorMessage }}</p>
+      <div class="button-group">
+        <!-- Cerebro para recordar -->
+        <label class="checkbox-brain">
+          <input type="checkbox" [(ngModel)]="isBrainChecked" name="brain" />
+          <img class="brain-icon" *ngIf="!isBrainChecked" src="/assets/resources/images/cerebro-tachado.png"
+            alt="Cerebro" />
+          <img class="brain-icon" *ngIf="isBrainChecked" src="/assets/resources/images/cerebro.png"
+            alt="Cerebro tachado" />
+        </label>
+
+        <!-- Botón deshabilitado si el form NO es válido -->
+        <button class="enter" type="submit">
+          Iniciar
+        </button>
+
+        <!-- Ojo para mostrar/ocultar contraseña -->
+        <label class="checkbox-eye">
+          <input type="checkbox" [checked]="isEyeChecked" (change)="togglePassword()" name="eye" />
+          <img class="eye-icon" *ngIf="!isEyeChecked" src="/assets/resources/images/ojo-tachado.png"
+            alt="Mostrar contraseña" />
+          <img class="eye-icon" *ngIf="isEyeChecked" src="/assets/resources/images/ojo.png" alt="Ocultar contraseña" />
+        </label>
+      </div>
+    </div>
+  </div>
+</form>

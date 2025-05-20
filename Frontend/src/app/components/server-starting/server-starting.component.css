@@ -1,0 +1,27 @@
+.starting-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.rotating-logo {
+  width: 50px;
+  margin: 10px 0 20px;
+  height: auto;
+  animation: spin 2s linear infinite;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
